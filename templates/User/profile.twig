@@ -1,0 +1,67 @@
+<script type="text/javascript" src="/Views/User/checkInput.js"></script>
+<hr>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6  offset-md-0  toppad">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">Données personnelles</h3>
+                    <table class="table table-user-information ">
+                        <tbody>
+                            <tr>
+                                <td>Nom</td>
+                                <td>
+                                    <input type="text" name="name" class="form-control" id="name" value="Doe" onblur="checkName(this)">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Prénom</td>
+                                <td>
+                                    <input type="text" name="surname" class="form-control" id="surname" value="Joe" onblur="checkSurname(this)">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Email</td>
+                                <td>
+                                    <input name="email" class="form-control" type="email" value=joe.doe@mail.com onblur="checkMail(this)" focus />
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                    <a href="#" onClick={props.handleSubmitProfile} class="btn btn-outline-info btn-block">Modifier</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6  offset-md-0  toppad">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">Changer le mot de passe</h3>
+                    <table class="table table-user-information ">
+                        <tbody>
+                            <tr>
+                                <td>Mot de passe actuel</td>
+                                <td>
+                                    <input type="password" name="passwordOld" class="form-control" id="passwordOld" required>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Nouveau mot de passe</td>
+                                <td>
+                                    <input type="password" name="passwordNew" class="form-control" id="password" required>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Confirmer votre nouveau mot de passe</td>
+                                <td>
+                                    <input type="password" name="password-confirmation" class="form-control" id="password-confirm" onblur="check2Psw(this)" required>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <a href="#" onClick={props.handleSubmitPass} class="btn btn-outline-info btn-block">Valider</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

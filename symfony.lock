@@ -1,0 +1,56 @@
+{
+    "psr/cache": {
+        "version": "1.0.x-dev"
+    },
+    "psr/simple-cache": {
+        "version": "1.0.x-dev"
+    },
+    "sensio/framework-extra-bundle": {
+        "version": "5.2",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "5.2",
+            "ref": "fb7e19da7f013d0d422fa9bce16f5c510e27609b"
+        }
+    },
+    "symfony/cache": {
+        "version": "4.3-dev"
+    },
+    "symfony/dotenv": {
+        "version": "4.3-dev"
+    },
+    "symfony/finder": {
+        "version": "4.3-dev"
+    },
+    "symfony/flex": {
+        "version": "1.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "1.0",
+            "ref": "5f8a51c0fad684396f6b6c0fd770e043439cb632"
+        }
+    },
+    "symfony/framework-bundle": {
+        "version": "4.2",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "4.2",
+            "ref": "82e2278ff2a74a97837e84c2493c30e7a85ad299"
+        }
+    },
+    "symfony/routing": {
+        "version": "4.2",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "4.2",
+            "ref": "5374e24d508ba8fd6ba9eb15170255fdb778316a"
+        }
+    },
+    "symfony/var-exporter": {
+        "version": "4.3-dev"
+    }
+}

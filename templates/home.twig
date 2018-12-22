@@ -1,0 +1,104 @@
+{% extends 'MasterPage.twig' %}
+{% block content %}
+<!-- Page d'accueil avec le carousel de meilleurs ventes -->
+
+<section class="jumbotron text-center">
+  <div class="container">
+    <h3 class="jumbotron-heading">Nos meilleures ventes</h3>
+  </div>
+</section>
+
+<div class="container">
+
+  <div id="demo" class="carousel slide" data-ride="carousel">
+
+    <!-- Indicateurs de slides -->
+    <ul class="carousel-indicators mb-0 pb-0">
+      <li data-target="#demo" data-slide-to="0" class="active"></li>
+      <li data-target="#demo" data-slide-to="1"></li>
+      <li data-target="#demo" data-slide-to="2"></li>
+    </ul>
+
+    <!-- le slideshow -->
+    <div class="carousel-inner no-padding my-auto">
+
+      <div class="carousel-item active">
+
+        <div class="col-xs-4 col-sm-4 col-md-4">
+          <a href="#" onclick=abc(this) class="slider_info">
+            <img class="img-fluid card-img-top" src="/img/shoes1.jpg">
+             <div class="card-img-overlay t_img">
+              <span class="float-right text-uppercase">8 ventes</span>
+          </div>
+          </a>
+          <p>Shoes 1</p>
+        </div>
+
+        <div class="col-xs-4 col-sm-4 col-md-4">
+          <a href="#" onclick=abc(this) class="slider_info">
+            <img class="img-fluid card-img-top rounded-bottom" src="/img/shoes1.jpg">
+          </a>
+          <p>Shoes 2</p>
+
+        </div>
+        <div class="col-xs-4 col-sm-4 col-md-4">
+          <a href="#" onclick=abc(this) class="slider_info">
+            <img class="img-fluid card-img-top rounded-bottom" src="/img/shoes1.jpg">
+          </a>
+          <p>Shoes 3</p>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <div class="col-xs-4 col-sm-4 col-md-4">
+          <a href="#" onclick=abc(this) class="slider_info">
+            <img class="img-fluid card-img-top" src="/img/shoes1.jpg">
+          </a>
+          <p>Shoes 4</p>
+        </div>
+        <div class="col-xs-4 col-sm-4 col-md-4">
+          <a href="#" onclick=abc(this) class="slider_info">
+            <img class="img-fluid card-img-top rounded-bottom" src="/img/shoes1.jpg">
+          </a>
+          <p>Shoes 5</p>
+        </div>
+
+        <div class="col-xs-4 col-sm-4 col-md-4">
+          <a href="#" onclick=abc(this) class="slider_info">
+            <img class="img-fluid card-img-top rounded-bottom" src="/img/shoes1.jpg">
+          </a>
+          <p>Shoes 6</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="col-xs-4 col-sm-4 col-md-4">
+          <a href="#" onclick=abc(this) class="slider_info">
+            <img class="img-fluid card-img-top rounded-bottom" src="/img/shoes1.jpg">
+          </a>
+          <p>Shoes 7</p>
+        </div>
+        <div class="col-xs-4 col-sm-4 col-md-4">
+          <a href="#" onclick=abc(this) class="slider_info">
+            <img class="img-fluid card-img-top rounded-bottom" src="/img/shoes1.jpg">
+          </a>
+          <p>Shoes 8</p>
+        </div>
+        <div class="col-xs-4 col-sm-4 col-md-4">
+          <a href="#" onclick=abc(this) class="slider_info">
+            <img class="img-fluid card-img-top rounded-bottom" src="/img/shoes1.jpg">
+          </a>
+          <p>Shoes 9</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Les boutons precedent/suivant -->
+    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+       <span class="carousel-control-prev-icon sp"></span>
+    </a>
+    <a class="carousel-control-next" href="#demo" data-slide="next">
+      <span class="carousel-control-next-icon sp"></span>
+    </a>
+  </div>
+</div>
+{% endblock %}

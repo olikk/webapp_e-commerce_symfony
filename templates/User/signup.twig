@@ -1,0 +1,117 @@
+{% extends 'MasterPage.twig' %}
+{% block content %}
+<script type="text/javascript" src="/Views/User/checkInput.js"></script>
+
+<div class="container">
+    <form class="form-horizontal" role="form" method="POST" action="index.php/signup">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <h2>S'enregistrer</h2>
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 field-label-responsive">
+                <label for="name">Votre nom</label>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                        <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-user"></i></div>
+                        <input type="text" name="name" class="form-control" id="name" placeholder="Entrer votre nom" onblur="checkName(this)" required>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-control-feedback" id="nameError">
+                    <span class="text-danger align-middle">
+                            <i class="fa fa-close"> Nom invalide</i></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 field-label-responsive">
+                <label for="surname">Votre prénom</label>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                        <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-user"></i></div>
+                        <input type="text" name="surname" class="form-control" id="surname" placeholder="Entrer votre prénom" onblur="checkSurname(this)" required>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-control-feedback" id="surnameError">
+                    <span class="text-danger align-middle"> <i class="fa fa-close"> Prénom invalide</i></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 field-label-responsive">
+                <label for="email">E-Mail Address</label>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group" id="mailInput">
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                        <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-at"></i></div>
+                        <input type="text" name="email" class="form-control" id="email" placeholder="you@example.com" onblur="checkMail(this)" required autofocus>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-control-feedback" id="mailError">
+                    <span class="text-danger align-middle">
+                            <i class="fa fa-close"> Email invalide</i>
+                        </span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 field-label-responsive">
+                <label for="password">Password</label>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group has-danger">
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                        <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-key"></i></div>
+                        <input type="password" name="password" class="form-control" id="password" placeholder="Password" required>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-md-3 field-label-responsive">
+                <label for="password">Confirmer le mot de passe</label>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                        <div class="input-group-addon" style="width: 2.6rem">
+                            <i class="fa fa-repeat"></i>
+                        </div>
+                        <input type="password" name="password-confirmation" class="form-control" id="password-confirm" placeholder="Password" onblur="check2Psw(this)" required>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-control-feedback" id="pswError">
+                    <span class="text-danger align-middle">
+                            <i class="fa fa-close"> Les mots de passe sont différents</i>
+                        </span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <button type="submit" class="btn btn-outline-info btn-block"><i class="fa fa-user-plus"></i> Valider</button>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}

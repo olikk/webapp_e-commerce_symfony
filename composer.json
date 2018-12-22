@@ -1,0 +1,28 @@
+{
+    "require": 
+    {
+        "twig/twig": "^2.0",
+        "slim/slim": "^3.0",
+        "php": "^7.1",
+        "doctrine/orm": "^2.6.2",
+        "doctrine/annotations": "1.7.x-dev",
+        "symfony/yaml": "^4.3@dev",
+        "symfony/flex": "^1.1@dev",
+        "sensio/framework-extra-bundle": "^5.2@dev",
+        "symfony/dotenv": "^4.3@dev"
+    },
+    "autoload": 
+    { 
+        "psr-0": {"": "src/Models/"}
+    },
+     "minimum-stability": "dev",
+    "require-dev": {
+        "symfony/web-server-bundle": "^4.3@dev"
+    },
+    "scripts": {
+        "auto-scripts": {
+            "cache:clear": "symfony-cmd",
+            "assets:install %PUBLIC_DIR%": "symfony-cmd"
+        }
+    }
+}
