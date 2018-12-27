@@ -9,20 +9,27 @@
         "symfony/yaml": "^4.3@dev",
         "symfony/flex": "^1.1@dev",
         "sensio/framework-extra-bundle": "^5.2@dev",
-        "symfony/dotenv": "^4.3@dev"
+        "symfony/dotenv": "^4.3@dev",
+        "symfony/twig-bundle": "^4.3",
+        "symfony/apache-pack": "dev-master",
+        "symfony/security": "^4.3@dev"
     },
-    "autoload": 
-    { 
-        "psr-0": {"": "src/Models/"}
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
     },
      "minimum-stability": "dev",
     "require-dev": {
-        "symfony/web-server-bundle": "^4.3@dev"
+        "symfony/web-server-bundle": "^4.3@dev",
+        "sensiolabs/security-checker": "^5.0@dev"
+        
     },
     "scripts": {
         "auto-scripts": {
             "cache:clear": "symfony-cmd",
-            "assets:install %PUBLIC_DIR%": "symfony-cmd"
+            "assets:install %PUBLIC_DIR%": "symfony-cmd",
+            "security-checker security:check": "script"
         }
     }
 }

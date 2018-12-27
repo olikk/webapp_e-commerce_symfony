@@ -6,8 +6,6 @@ use Symfony\Component\HttpFoundation\Request;
 
 require dirname(__DIR__).'/config/bootstrap.php';
 
-$loader = new Twig_Loader_Filesystem(__DIR__.'/templates');
-$twig = new Twig_Environment($loader);
 
 if ($_SERVER['APP_DEBUG']) {
     umask(0000);

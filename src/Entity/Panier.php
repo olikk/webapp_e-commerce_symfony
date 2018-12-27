@@ -1,5 +1,6 @@
 <?php
 // Entity/Panier.php
+namespace App\Entity;
 /**
  * @Entity @Table(name="panier")
  **/
