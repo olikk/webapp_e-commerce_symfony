@@ -13,20 +13,24 @@
 
       <h5 class="my-4">ShoesIsAllYouNeed</h5>
       <div class="list-group">
-        <a href="/index.php/catalogue.html" class="list-group-item">Femme</a>
-         <a href="/index.php/catalogue.html" class="list-group-item">Homme</a>
+        <a href="/catalogue/chaussures" class="list-group-item">Chaussures</a>
+        <a href="/catalogue/basckets" class="list-group-item">Basckets</a>
+        <a href="/catalogue/escarpins" class="list-group-item">Escarpins</a>
+         <a href="/catalogue/bottines" class="list-group-item">Bottines</a>
       </div>
       <br>
        <div class="row">
     
+      <form class="form-horizontal" action="/search" method='post'>
       <div class="input-group">
-        <input type="text" class="form-control" placeholder="Rechercher les articles">
+        <input type="text" name="item" class="form-control" placeholder="Rechercher les articles">
         <div class="input-group-append">
-          <button class="btn btn-secondary" type="button">
+          <button class="btn btn-secondary" type="submit">
             <i class="fa fa-search"></i>
           </button>
         </div>
       </div>
+     </form>
     </div>
     </div>
     
@@ -38,15 +42,15 @@
         {% for produit in produits %}
         <div class="col-lg-4 col-md-6 mb-4">
           <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="/img/shoes1.jpg" class="img-fluid" alt="prewiew" width="120" height="150"></a>
+            <a href="#"><img class="card-img-top" src={{ produit.image }} class="img-fluid" alt="prewiew" width="120" height="150"></a>
             <div class="card-body">
               <h4 class="card-title">
                 <a href="#"> {{ produit.nom }} </a>
               </h4>
               <h5>{{ produit.prix }}€</h5>
-              <p class="card-text"> Basckets </p>
+              <p class="card-text"> {{ produit.description }} </p>
               </p>
-              <a class="btn btn-sm btn-block btn-info" role="button" href="/index.php/cart.html"><i class="fa fa-shopping-cart"></i> Acheter</a>
+              <a class="btn btn-sm btn-block btn-info" role="button" href="/{{produit.id}}/item-add"><i class="fa fa-shopping-cart"></i> Acheter</a>
             </div>
             <div class="card-footer">
               <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
@@ -54,115 +58,7 @@
           </div>
         </div>
         {% endfor %}
-<!--
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="/img/shoes1.jpg" class="img-fluid" alt="prewiew" width="120" height="150"></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="#"> Kike X10</a>
-              </h4>
-              <h5>124.99€</h5>
-              <p class="card-text"> Basckets </p>
-              </p>
-              <a class="btn btn-sm btn-block btn-info" role="button" href="/index.php/cart.html"><i class="fa fa-shopping-cart"></i> Acheter</a>
-            </div>
-            <div class="card-footer">
-              <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-            </div>
-          </div>
-        </div>
-        
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="/img/shoes1.jpg" class="img-responsive" alt="prewiew" width="120" height="150"></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="#"> Kike X10</a>
-              </h4>
-              <h5>124.99€</h5>
-              <p class="card-text"> Basckets </p>
-              </p>
-             <a class="btn btn-sm btn-block btn-info" role="button" href="/index.php/cart.html"><i class="fa fa-shopping-cart"></i> Acheter</a>
-            </div>
-            <div class="card-footer">
-              <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-            </div>
-          </div>
-        </div>
 
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="/img/shoes1.jpg" class="img-responsive" alt="prewiew" width="120" height="150"></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="#"> Kike X10</a>
-              </h4>
-              <h5>124.99€</h5>
-              <p class="card-text"> Basckets </p>
-              </p>
-              <a class="btn btn-sm btn-block btn-info" role="button" href="/index.php/cart.html"><i class="fa fa-shopping-cart"></i> Acheter</a>
-            </div>
-            <div class="card-footer">
-              <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="/img/shoes1.jpg" class="img-responsive" alt="prewiew" width="120" height="150"></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="#"> Kike X10</a>
-              </h4>
-              <h5>124.99€</h5>
-              <p class="card-text"> Basckets </p>
-              </p>
-              <button class="btn btn-sm btn-block btn-info"><i class="fa fa-shopping-cart"></i> Acheter</button>
-            </div>
-            <div class="card-footer">
-              <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="/img/shoes1.jpg" class="img-responsive" alt="prewiew" width="120" height="150"></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="#"> Kike X10</a>
-              </h4>
-              <h5>124.99€</h5>
-              <p class="card-text"> Basckets </p>
-              </p>
-              <button class="btn btn-sm btn-block btn-info"><i class="fa fa-shopping-cart"></i> Acheter</button>
-            </div>
-            <div class="card-footer">
-              <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="/img/shoes1.jpg" class="img-responsive" alt="prewiew" width="120" height="150"></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="#"> Kike X10</a>
-              </h4>
-              <h5>124.99€</h5>
-              <p class="card-text"> Basckets </p>
-              </p>
-              <button class="btn btn-sm btn-block btn-info"><i class="fa fa-shopping-cart"></i> Acheter</button>
-            </div>
-            <div class="card-footer">
-              <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-            </div>
-          </div>
-        </div>
--->
       </div>
       <!-- /.row -->
 

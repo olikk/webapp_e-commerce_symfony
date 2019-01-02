@@ -1,9 +1,9 @@
 {% extends 'MasterPage.twig' %}
 {% block content %}
-<script type="text/javascript" src="/Views/User/checkInput.js"></script>
+
 
 <div class="container">
-    <form class="form-horizontal" role="form" method="POST" action="index.php/signup">
+    <form class="form-horizontal" action="/register" role="form" method="POST">
         <div class="row">
             <div class="col-md-3"></div>
             <div class="col-md-6">
@@ -114,4 +114,5 @@
         </div>
     </form>
 </div>
+<script type="text/javascript" src="js/checkInput.js"></script>
 {% endblock %}

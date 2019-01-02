@@ -1,0 +1,48 @@
+security:
+    # encoder
+    encoders:
+        App\Entity\User:
+            algorithm: bcrypt
+    
+    # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
+    providers:
+        database_users:
+            entity:
+                class: App\Entity\User
+                property: email
+
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        main:
+            anonymous: ~
+            #guard:
+                #authenticators:
+                    #- App\Security\LoginFormAuthenticator
+
+            # activate different ways to authenticate
+
+            # http_basic: true
+            # https://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
+
+            form_login: 
+                check_path: app_login
+                # The name of the route where the login form lives
+                # When the user tries to access a protected page, they are redirected here
+                login_path: app_login
+                #username_parameter: email
+                #password_parameter: password
+
+            logout:
+                # The route name the user can go to in order to logout
+                path: app_logout
+                # The name of the route to redirect to after logging out
+                target: /login
+
+    # Easy way to control access for large sections of your site
+    # Note: Only the *first* access control that matches will be used
+    access_control:
+        # - { path: ^/admin, roles: ROLE_ADMIN }
+         - { path: ^/profile, roles: ROLE_USER }
+         - { path: ^/cart, roles: ROLE_USER }

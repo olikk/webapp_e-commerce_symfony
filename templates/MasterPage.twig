@@ -4,13 +4,11 @@
         <meta charset="UTF-8">
 	       <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>    
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-
+         
        <!-- stylesheet includes --> 
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="/public/Css/style1.css" type="text/css">
+        <link rel="stylesheet" href="/Css/style1.css" type="text/css">
 
 	       <title> Site e-commerce </title>
     </head>
@@ -18,10 +16,23 @@
 
         
         {% include 'header.twig' %}
-       
+        <div class="row">
+            <div class="col-md-3"></div>
+              <div class="col-md-6">
+                {% for label, messages in app.session.flashBag.all %}
+                    {% for message in messages %}
+                        <div class="alert alert-{{ label }} alert-dismissible fade show">
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                {% endfor %}
+              </div>
+        </div>
         {% block content %}{% endblock %}
         
         {% include 'footer.twig' %}
-       
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>    
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     </body>
 </html>

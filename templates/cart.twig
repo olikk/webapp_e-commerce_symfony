@@ -1,8 +1,13 @@
+{% extends 'MasterPage.twig' %}
+{% block content %}
 <section class="jumbotron text-center">
     <div class="container">
         <h3 class="jumbotron-heading">MON PANIER</h3>
      </div>
 </section>
+{% if produits == null %}
+<h5 class='text-center'>panier vide</h5>
+{% else %}
 <div class="container mb-4">
     <div class="row">
         <div class="col-12">
@@ -19,22 +24,19 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td><img src="/img/shoes1.jpg" class="img-responsive" alt="prewiew" width="120" height="80" /> </td>
-                            <td>Shoes 1</td>
-                            <td>En stock</td>
-                            <td><input class="form-control" type="text" value="1" /></td>
-                            <td class="text-right">124,90 €</td>
-                            <td class="text-right"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
-                        </tr>
-                        <tr>
-                            <td><img src="/img/shoes1.jpg" class="img-responsive" alt="prewiew" width="120" height="80" /> </td>
-                            <td>Shoes 1</td>
-                            <td>En stock</td>
-                            <td><input class="form-control" type="text" value="1" /></td>
-                            <td class="text-right">33,90 €</td>
-                            <td class="text-right"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
-                        </tr>
+                        {% for produit in produits %}
+                            <tr>
+                                <td><img src={{ produit.image }} class="img-responsive" alt="prewiew" width="120" height="80" /> </td>
+                                <td>{{ produit.nom }}</td>
+                                <td>En stock</td>
+                                <td><input class="form-control" type="text" value={{produit.quantity}} /></td>
+                                <td class="text-right">{{ produit.prix }}€</td>
+                                <td class="text-right">
+                                    <a class="btn btn-sm btn-danger" role="button" href="/{{produit.id}}/item-remove">
+                                        <i class="fa fa-trash"></i> </a>
+                                </td>
+                            </tr>
+                        {% endfor %}
                         
                         <tr>
                             <td></td>
@@ -50,7 +52,7 @@
                             <td></td>
                             <td></td>
                             <td>Livraison</td>
-                            <td class="text-right">6,90 €</td>
+                            <td class="text-right">26,90 €</td>
                         </tr>
                         <tr>
                             <td></td>
@@ -67,13 +69,16 @@
         <div class="col mb-2">
             <div class="row">
                 <div class="col-sm-12  col-md-6">
-                    <a class="btn btn-lg btn-block btn-outline-info" role="button" href="/index.php/catalogue.html">Continuer le Shopping</a>
+                    <a class="btn btn-lg btn-block btn-outline-info" role="button" href="/catalogue">Continuer le Shopping</a>
                 </div>
                 <div class="col-sm-12 col-md-6 text-right">
-                    <a class="btn btn-lg btn-block btn-info" role="button" href="/index.php/payment.html">Payer</a>
+                    <a class="btn btn-lg btn-block btn-info" role="button" href="/payment">Payer</a>
                 </div>
             </div>
         </div>
     </div>
 </div>
+ {% endif %}
 <hr>
+
+ {% endblock %}

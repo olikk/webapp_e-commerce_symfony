@@ -1,41 +1,48 @@
 <?php
-namespace App\Entity;
+
 // Entity/Produit.php
+namespace App\Entity;
+use Doctrine\ORM\Mapping as ORM;
+
+
 /**
- * @Entity @Table(name="produit")
+ * @ORM\Entity(repositoryClass="App\Repository\ProductRepository")
+ * @ORM\Table(name="produit")
  **/
 class Product
 {
-    /** 
-     * @Id @Column(type="integer") @GeneratedValue
-     * @var int
-     **/
+    /**
+     * @ORM\Id
+     * @ORM\GeneratedValue
+     * @ORM\Column(type="integer")
+     */
     protected $id;
     /**
-     * @Column(type="string")
+     * @ORM\Column(type="string")
      * @var string
      **/
     protected $nom;
     /** 
-     * @Column(type="integer") 
+     * @ORM\Column(type="integer") 
      * @var int
      **/
     protected $prix;
     /** 
-     * @Column(type="integer") 
+     * @ORM\Column(type="integer") 
      * @var int
      **/
     protected $vendu;
     /**
-     * @Column(type="string")
+     * @ORM\Column(type="string")
      * @var string
      **/
     protected $description;
     /**
-     * @Column(type="string")
+     * @ORM\Column(type="string")
      * @var string
      **/
     protected $image;
+    public $quantity;
     
     public function getId()
     {

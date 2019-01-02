@@ -9,10 +9,15 @@ use Symfony\Component\Routing\Annotation\Route;
 class DefaultController extends AbstractController
 {
     /**
-     * @Route("/hi")
+     * @Route("/about")
      */
      public function index() {
-          //return $this->render('home.twig');
-          return new Response("Hello");
+        return $this->render("about.twig");
+     }
+     /**
+     * @Route("/payment")
+     */
+     public function index1() {
+        return $this->render("payment.twig");
      }
 }

@@ -27,9 +27,23 @@ class ProductRepository extends ServiceEntityRepository
             ->getQuery();
 
         return $qb->execute();
+    }
+ 
+    /**
+     * 
+     * @return Product[6]
+     */
+    public function findBestSales(): array
+    {
+        // produits vendus plus que 10
+        $qb = $this->createQueryBuilder('p')
+            ->andWhere('p.vendu > 10')
+            ->orderBy('p.vendu', 'Desc')
+            ->getQuery()
+            ->setMaxResults(6);
 
-        // to get just one result:
-        // $product = $qb->setMaxResults(1)->getOneOrNullResult();
+        return $qb->execute();
+
     }
 }
 ?>

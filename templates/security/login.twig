@@ -1,10 +1,19 @@
 {% extends 'MasterPage.twig' %}
 {% block content %}
 <div class="container">
-  <form class="form-horizontal" role="form" method="POST" action="index.php/login">
+  <form class="form-horizontal" action="{{ path('app_login') }}" role="form" method="post">
+     <input type="hidden" name="_target_path" value="/" />
+     <div class="row">
      {% if error %}
-        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+     <div class="col-md-3"></div>
+      <div class="col-md-6">
+        <div class="alert alert-danger alert-dismissible fade show">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          {{ error.messageKey|trans(error.messageData, 'security') }}
+        </div>
+      </div>
     {% endif %}
+    </div>
     <div class="row">
       <div class="col-md-3"></div>
       <div class="col-md-6">
@@ -20,7 +29,7 @@
         <div class="form-group">
           <div class="input-group mb-2 mr-sm-2 mb-sm-0">
             <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-at"></i></div>
-            <input type="text" name="email" class="form-control" value="{{ last_username }}" id="email" placeholder="you@example.com" onblur="checkMail(this)">
+            <input type="email" name="_username" class="form-control" value="{{ last_username }}" id="email" placeholder="you@example.com" onblur="checkMail(this)">
              
           </div>
         </div>
@@ -39,7 +48,7 @@
         <div class="form-group has-danger">
           <div class="input-group mb-2 mr-sm-2 mb-sm-0">
             <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-key"></i></div>
-            <input type="password" name="password" class="form-control" id="password" placeholder="Password">
+            <input type="password" name="_password" class="form-control" id="password" placeholder="Password" required>
           </div>
         </div>
       </div>
@@ -53,6 +62,7 @@
         <button type="submit" class="btn btn-info btn-block"> Se connecter</button>
       </div>
     </div>
+  </form>
     <br>
     <div class="row">
       <div class="col-md-3"></div>
@@ -64,13 +74,13 @@
     <div class="row">
       <div class="col-md-3"></div>
       <div class="col-md-6">
-         <button class="btn btn-outline-info btn-block" type="submit">
-            <i class="fa fa-user-plus"></i>Créer un compte
-        </button>
+          <a class="btn btn-lg btn-block btn-outline-info" role="button" href="/register">
+             <i class="fa fa-user-plus"></i>Créer un compte
+          </a>
       </div>
     </div>
 
-  </form>
+
 </div>
-<script type="text/javascript" src="/templates/User/checkInput.js"></script>
+<script type="text/javascript" src="js/checkInput.js"></script>
  {% endblock %}

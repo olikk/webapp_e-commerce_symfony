@@ -1,31 +1,35 @@
 <?php
 // Entity/Panier.php
 namespace App\Entity;
+use Doctrine\ORM\Mapping as ORM;
 /**
- * @Entity @Table(name="panier")
+ * @ORM\Entity @ORM\Table(name="panier")
+ * @ORM\Entity(repositoryClass="App\Repository\PanierRepository")
  **/
 class Panier
 {
-    /** 
-     * @Id @Column(type="integer") @GeneratedValue
-     * @var int
-     **/
-    protected $id;
+    
     /**
-     * @Column(type="integer")
+     * @ORM\Id @ORM\Column(type="integer")
      * @var int
      **/
-    protected $user_id;
+    private $user_id;
     /** 
-     * @Column(type="integer") 
+     * @ORM\Id @ORM\Column(type="integer") 
      * @var int
      **/
-    protected $produit_id;
+    private $produit_id;
     /** 
-     * @Column(type="integer") 
+     * @ORM\Column(type="integer") 
      * @var int
      **/
     protected $quantite;
+    public function __construct($user_id, $produit_id)
+    {
+        $this->user_id = $user_id;
+        $this->produit_id = $produit_id;
+    }
+    
     
     public function getId()
     {
@@ -37,19 +41,11 @@ class Panier
         return $this->user_id;
     }
 
-    public function setUserId($userId)
-    {
-        $this->user_id = $userId;
-    }
     public function getProduitId()
     {
         return $this->produit_id;
     }
 
-    public function setProduitId($produitId)
-    {
-        $this->produit_id = $produitId;
-    }
     public function getQuantite()
     {
         return $this->quantite;
